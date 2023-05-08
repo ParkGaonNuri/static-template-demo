@@ -12,10 +12,23 @@ repositories {
 	mavenCentral()
 }
 
+ext {
+  set('springCloudAzureVersion', "4.7.0")
+}
+
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'com.azure.spring:spring-cloud-azure-starter-storage'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+}
+
+dependencyManagement {
+  imports {
+    mavenBom "com.azure.spring:spring-cloud-azure-dependencies:${springCloudAzureVersion}"
+  }
 }
 
 tasks.named('test') {
