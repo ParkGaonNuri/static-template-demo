@@ -35,7 +35,7 @@ public class BasicController {
         //private Resource storageBlobsResource
         return "upload.html";
     }
-    @CrossOrigin(origins = "http://hsleemedia.azurewebsites.net" )
+    @CrossOrigin(origins = "https://nuridevlog.blob.core.windows.net/vedio/hello.mp4" )
     @PostMapping("auth")
     public String auth(Model model,@RequestParam("ID") String ID, @RequestParam("password") String password) {
         model.addAttribute("ID", ID);
